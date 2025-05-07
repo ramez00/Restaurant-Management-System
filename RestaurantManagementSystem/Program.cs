@@ -3,6 +3,8 @@ using RestaurantManagementSystem.Core.Interfaces;
 using static RestaurantManagementSystem.Core.Appetizers;
 using static RestaurantManagementSystem.Core.Dessert;
 using static RestaurantManagementSystem.Core.MainCourse;
+using static RestaurantManagementSystem.Core.DishFactory;
+
 
 namespace RestaurantManagementSystem;
 
@@ -30,22 +32,22 @@ class Program
             switch (choice)
             {
                 case 1:
-                    meal.Appetizer = new Salad("small", "100-150", 5, new() { "cucumber", "Tomato", "Carrot" });
+                    meal.Appetizer = DishFactory.CreateAppetizer("Salad");
                     break;
                 case 2:
-                    meal.Appetizer = new ChikenWings("large", "400-500", 5, new() { "Chicken", "Spices", "Tomato Sauce" });
+                    meal.Appetizer = DishFactory.CreateAppetizer("ChikenWings");
                     break;
                 case 3:
-                    meal.Appetizer = new MozarellaSticks("small", "500-650", 5, new() { "Mozarella", "Flour", "Eggs" });
+                    meal.Appetizer = DishFactory.CreateAppetizer("MozarellaSticks");
                     break;
                 case 4:
-                    meal.Appetizer = new Nachos("small", "100-150", 5, new() { "Beans", "Meat" });
+                    meal.Appetizer = DishFactory.CreateAppetizer("Nachos");
                     break;
                 case 5:
-                    meal.Appetizer = new SpringRolls("small", "100-150", 5, new() { "Egg", "Shrimp", "Carrot" });
+                    meal.Appetizer = DishFactory.CreateAppetizer("SpringRolls");
                     break;
                 case 6:
-                    meal.Appetizer = new StuffedMushrooms("small", "100-150", 5, new() { "Mushroom", "Cheese", "Onion" });
+                    meal.Appetizer = DishFactory.CreateAppetizer("StuffedMushrooms");
                     break;
                 default:
                     break;
@@ -73,28 +75,28 @@ class Program
             switch (MainCourse)
             {
                 case 1:
-                    meal.mainCourse = new Pasta("small", "100-150", 5, new() { "Pasta", "Tomato Sauce" });
+                    meal.mainCourse = DishFactory.CreateMainCourse("Pasta");
                     break;
                 case 2:
-                    meal.mainCourse = new Steak("large", "400-500", 5, new() { "Steak", "Spices" });
+                    meal.mainCourse = DishFactory.CreateMainCourse("Steak");
                     break;
                 case 3:
-                    meal.mainCourse = new Pizza("small", "500-650", 5, new() { "Pizza Dough", "Tomato Sauce" });
+                    meal.mainCourse = DishFactory.CreateMainCourse("Pizza");
                     break;
                 case 4:
-                    meal.mainCourse = new Burger("small", "100-150", 5, new() { "Bread", "Meat" });
+                    meal.mainCourse = DishFactory.CreateMainCourse("Burger");
                     break;
                 case 5:
-                    meal.mainCourse = new Sushi("small", "100-150", 5, new() { "Rice", "Fish" });
+                    meal.mainCourse = DishFactory.CreateMainCourse("Sushi");
                     break;
                 case 6:
-                    meal.mainCourse = new Risotto("small", "100-150", 5, new() { "Rice", "Cheese" });
+                    meal.mainCourse = DishFactory.CreateMainCourse("Risotto");
                     break;
                 case 7:
-                    meal.mainCourse = new Curry("small", "100-150", 5, new() { "Rice", "Chicken" });
+                    meal.mainCourse = DishFactory.CreateMainCourse("Curry");
                     break;
                 case 8:
-                    meal.mainCourse = new Tacos("small", "100-150", 5, new() { "Tortilla", "Meat" });
+                    meal.mainCourse = DishFactory.CreateMainCourse("Tacos");
                     break;
                 default:
                     break;
@@ -118,19 +120,19 @@ class Program
             switch (Dessert)
             {
                 case 1:
-                    meal.dessert = new Cake("Large", "300-450", 5, new() { "Flour", "Sugar" , "Egg" });
+                    meal.dessert = DishFactory.CreateDessert("Cake");
                     break;
                 case 2:
-                    meal.dessert = new Pudding("small", "200-350", 5, new() { "Milk", "Sugar" });
+                    meal.dessert = DishFactory.CreateDessert("Pudding");
                     break;
                 case 3:
-                    meal.dessert = new Sorbet("small", "100-150", 5, new() { "Fruit", "Sugar" });
+                    meal.dessert = DishFactory.CreateDessert("Sorbet");
                     break;
                 case 4:
-                    meal.dessert = new Cheesecake("Meduim", "300-350", 5, new() { "Cheese", "Sugar" ,"Flour" });
+                    meal.dessert = DishFactory.CreateDessert("Cheesecake");
                     break;
                 case 5:
-                    meal.dessert = new Mousse("small", "100-150", 5, new() { "Chocolate", "Cream" ,"Egg" });
+                    meal.dessert = DishFactory.CreateDessert("Mousse");
                     break;
                 default:
                     break;
