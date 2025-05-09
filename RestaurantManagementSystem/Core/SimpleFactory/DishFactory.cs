@@ -3,7 +3,7 @@ using static RestaurantManagementSystem.Core.Appetizers;
 using static RestaurantManagementSystem.Core.Dessert;
 using static RestaurantManagementSystem.Core.MainCourse;
 
-namespace RestaurantManagementSystem.Core;
+namespace RestaurantManagementSystem.Core.SimpleFactory;
 public class DishFactory
 {
     public static IAppetizer CreateAppetizer(string dishType)
