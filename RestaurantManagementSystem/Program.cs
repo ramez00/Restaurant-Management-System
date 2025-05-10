@@ -1,4 +1,6 @@
-﻿using RestaurantManagementSystem.Core.FactoryMethod;
+﻿using RestaurantManagementSystem.Core.AbstractFactory;
+using RestaurantManagementSystem.Core.AbstractFactory.Interface;
+using RestaurantManagementSystem.Core.FactoryMethod;
 using RestaurantManagementSystem.Core.Interfaces;
 using RestaurantManagementSystem.Core.SimpleFactory;
 using static RestaurantManagementSystem.Core.Appetizers;
@@ -134,6 +136,29 @@ if (int.TryParse(Console.ReadLine(), out Dessert))
 }
 Console.Clear();
 
+Console.WriteLine("Please select a meal type:");
+Console.WriteLine("1. Diet Meal");
+Console.WriteLine("2. Chease Lover Meal");
+
+int mealType;
+if (int.TryParse(Console.ReadLine(), out mealType))
+{
+    IMeal mealTypeFactory = null;
+    switch (mealType)
+    {
+        case 1:
+            mealTypeFactory = new DietMeal();
+            break;
+        case 2:
+            mealTypeFactory = new CheaseLoverMeal();
+            break;
+        default:
+            break;
+    }
+    meal.Appetizer = mealTypeFactory?.PrepareAppetizer();
+    meal.mainCourse = mealTypeFactory?.PrepareMainCourse();
+    meal.dessert = mealTypeFactory?.PrepareDessert();
+}
 
 meal.Appetizer?.Serve();
 meal.mainCourse?.Serve();
